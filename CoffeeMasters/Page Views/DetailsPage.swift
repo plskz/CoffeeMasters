@@ -10,16 +10,21 @@ struct DetailsPage: View {
     @State private var quantity: Int = 1
     var product: Product
     
+    @EnvironmentObject var cartManager: CartManager
+    
     var body: some View {
         ScrollView {
             AsyncImage(url: product.imageURL)
                 .cornerRadius(5)
                 .frame(maxWidth: .infinity, idealHeight: 150, maxHeight: 150)
                 .padding(.top, 32)
+           
             Text(product.description ?? "No Description")
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.leading)
                 .padding(24)
+                .foregroundColor(Color("Primary"))
+            
             HStack {
                 Text("$ \(product.price, specifier: "%.2f") ea")
                 Stepper(value: $quantity, in: 1...10) { }
@@ -32,7 +37,7 @@ struct DetailsPage: View {
                 .padding(12)
             
             Button("Add \(quantity) to Cart") {
-                //TODO
+                cartManager.add(product: product, quantity: quantity)
             }
             .padding()
             .frame(width: 250.0)
@@ -56,5 +61,6 @@ struct DetailsPage_Previews: PreviewProvider {
                 image: "flatwhite.png"
             )
         )
+        .environmentObject(CartManager())
     }
 }

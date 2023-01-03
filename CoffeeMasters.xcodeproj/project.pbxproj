@@ -113,8 +113,8 @@
 				2C003C14295C62B300FC2D4D /* Model */,
 				2C46BA85295B2DD200761531 /* Page Views */,
 				2C46BA84295B2DCA00761531 /* Views */,
-				2C7751B62959C231006C4C00 /* CoffeeMastersApp.swift */,
 				2C7751B82959C231006C4C00 /* ContentView.swift */,
+				2C7751B62959C231006C4C00 /* CoffeeMastersApp.swift */,
 				2C7751BA2959C232006C4C00 /* Assets.xcassets */,
 				2C7751BC2959C232006C4C00 /* Preview Content */,
 			);
