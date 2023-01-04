@@ -25,6 +25,9 @@ struct MenuPage: View {
                 }
             }
             .navigationTitle("Products")
+            .refreshable {
+                menuManager.refreshItemsFromNetwork()
+            }
         }
     }
 }
