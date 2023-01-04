@@ -11,6 +11,7 @@ struct DetailsPage: View {
     var product: Product
     
     @EnvironmentObject var cartManager: CartManager
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ScrollView {
@@ -18,7 +19,7 @@ struct DetailsPage: View {
                 .cornerRadius(5)
                 .frame(maxWidth: .infinity, idealHeight: 150, maxHeight: 150)
                 .padding(.top, 32)
-           
+            
             Text(product.description ?? "No Description")
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.leading)
@@ -38,6 +39,7 @@ struct DetailsPage: View {
             
             Button("Add \(quantity) to Cart") {
                 cartManager.add(product: product, quantity: quantity)
+                dismiss()
             }
             .padding()
             .frame(width: 250.0)
