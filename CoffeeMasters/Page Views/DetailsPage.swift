@@ -26,12 +26,8 @@ struct DetailsPage: View {
                 .padding(24)
                 .foregroundColor(Color("Primary"))
             
-            HStack {
-                Text("$ \(product.price, specifier: "%.2f") ea")
-                Stepper(value: $quantity, in: 1...10) { }
-            }
-            .frame(maxWidth: .infinity)
-            .padding(30)
+            Stepper("$ \(product.price, specifier: "%.2f") ea", value: $quantity, in: 1...10)
+                .padding(30)
             
             Text("Subtotal $\(product.price * Double(quantity), specifier: "%.2f")")
                 .bold()
