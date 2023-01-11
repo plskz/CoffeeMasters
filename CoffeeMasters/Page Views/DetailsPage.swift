@@ -15,10 +15,7 @@ struct DetailsPage: View {
     
     var body: some View {
         ScrollView {
-            AsyncImage(url: product.imageURL)
-                .cornerRadius(5)
-                .frame(maxWidth: .infinity, idealHeight: 150, maxHeight: 150)
-                .padding(.top, 32)
+            ProductThumbnail(url: product.imageURL)
             
             Text(product.description ?? "No Description")
                 .frame(maxWidth: .infinity)
@@ -60,5 +57,16 @@ struct DetailsPage_Previews: PreviewProvider {
             )
         )
         .environmentObject(CartManager())
+    }
+}
+
+struct ProductThumbnail: View {
+    var url: URL
+    
+    var body: some View {
+        AsyncImage(url: url)
+            .cornerRadius(5)
+            .frame(maxWidth: .infinity, idealHeight: 150, maxHeight: 150)
+            .padding(.top, 32)
     }
 }
