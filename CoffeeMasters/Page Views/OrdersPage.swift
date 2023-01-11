@@ -55,8 +55,7 @@ struct OrdersPage: View {
                         HStack {
                             Spacer()
                             Button("Place Order") {
-                                //TODO: Validation
-                                //                                orderConfirmed = true
+                                // TODO: validation
                             }
                             .padding()
                             .frame(width: 250.0)
@@ -71,16 +70,6 @@ struct OrdersPage: View {
                 .listSectionSeparatorTint(Color("AccentColor"))
                 .listStyle(.insetGrouped)
                 .navigationTitle("Your Order")
-                //                .alert("Order", isPresented: $orderConfirmed, actions: {
-                //                    Button("OK", role: .cancel) {
-                //                        //TODO: send order
-                //                        orderConfirmed = false
-                //                        cartManager.clear()
-                //                    }
-                //                }, message: {
-                //                    Text("Your order is being prepared.")
-                //                        .font(.title)
-                //                })
             }
         }
     }
