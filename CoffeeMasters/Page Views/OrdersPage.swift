@@ -8,11 +8,13 @@ import SwiftUI
 
 struct OrdersPage: View {
     
-    @State var name = ""
-    @State var phone = ""
-    
-    // Bring the singleton that was injected in the App
+    @EnvironmentObject var menuManager: MenuManager
     @EnvironmentObject var cartManager: CartManager
+    
+    @AppStorage("name") var name = ""
+    @AppStorage("phone") var phone = ""
+    
+    @State private var orderConfirmed = false
     
     var body: some View {
         
@@ -26,7 +28,7 @@ struct OrdersPage: View {
                         ForEach(cartManager.cart, id:\.0.id) { item in
                             OrderItem(item: item)
                         }
-                    }.listRowBackground(Color("Background"))
+                    }.listRowBackground(Color("SurfaceBackground"))
                     
                     Section("YOUR DETAILS") {
                         VStack {
@@ -36,9 +38,10 @@ struct OrdersPage: View {
                             TextField("Your Phone #", text: $phone)
                                 .keyboardType(.phonePad)
                                 .textFieldStyle(.roundedBorder)
-                        }.padding(.top)
-                            .padding(.bottom)
-                    }.listRowBackground(Color("Background"))
+                        }
+                        .padding(.top)
+                        .padding(.bottom)
+                    }.listRowBackground(Color("SurfaceBackground"))
                     
                     Section() {
                         HStack {
@@ -55,7 +58,8 @@ struct OrdersPage: View {
                         HStack {
                             Spacer()
                             Button("Place Order") {
-                                // TODO: validation
+                                // TODO: Validation
+                                orderConfirmed = true
                             }
                             .padding()
                             .frame(width: 250.0)
@@ -70,6 +74,16 @@ struct OrdersPage: View {
                 .listSectionSeparatorTint(Color("AccentColor"))
                 .listStyle(.insetGrouped)
                 .navigationTitle("Your Order")
+                .alert("Order", isPresented: $orderConfirmed, actions: {
+                    Button("OK", role: .cancel) {
+                        //TODO: send order
+                        orderConfirmed = false
+                        cartManager.clear()
+                    }
+                }, message: {
+                    Text("Your order is being prepared.")
+                        .font(.title)
+                })
             }
         }
     }

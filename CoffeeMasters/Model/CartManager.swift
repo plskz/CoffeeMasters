@@ -19,6 +19,10 @@ class CartManager: ObservableObject {
         }
     }
     
+    func clear() {
+        cart.removeAll()
+    }
+    
     func total() -> Double {
         var total = 0.0
         for item in cart {
