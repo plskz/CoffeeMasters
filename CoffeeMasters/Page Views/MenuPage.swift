@@ -53,6 +53,7 @@ struct MenuPage: View {
                 .listStyle(.insetGrouped)
                 .navigationTitle("Products")
                 .searchable(text: $search)
+                .disableAutocorrection(true)
                 .refreshable {
                     menuManager.refreshItemsFromNetwork()
                 }
