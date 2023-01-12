@@ -28,7 +28,8 @@ struct OrdersPage: View {
                         ForEach(cartManager.cart, id:\.0.id) { item in
                             OrderItem(item: item)
                         }
-                    }.listRowBackground(Color("SurfaceBackground"))
+                    }
+                    .listRowBackground(Color("SurfaceBackground"))
                     
                     Section("YOUR DETAILS") {
                         VStack {
@@ -41,7 +42,8 @@ struct OrdersPage: View {
                         }
                         .padding(.top)
                         .padding(.bottom)
-                    }.listRowBackground(Color("SurfaceBackground"))
+                    }
+                    .listRowBackground(Color("SurfaceBackground"))
                     
                     Section() {
                         HStack {
@@ -52,7 +54,8 @@ struct OrdersPage: View {
                                 .bold()
                             Spacer()
                         }
-                    }.listRowBackground(Color.clear)
+                    }
+                    .listRowBackground(Color.clear)
                     
                     Section {
                         HStack {
@@ -69,7 +72,8 @@ struct OrdersPage: View {
                             
                             Spacer()
                         }
-                    }.listRowBackground(Color.clear)
+                    }
+                    .listRowBackground(Color.clear)
                 }
                 .listSectionSeparatorTint(Color("AccentColor"))
                 .listStyle(.insetGrouped)

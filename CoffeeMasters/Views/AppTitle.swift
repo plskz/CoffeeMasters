@@ -13,9 +13,9 @@ struct AppTitle: View {
             Image("logo")
             Spacer()
         }
-            .padding(4)
-            .listRowBackground(Color("Secondary"))
-            .background(Color("Secondary"))
+        .padding(4)
+        .listRowBackground(Color("Secondary"))
+        .background(Color("Secondary"))
     }
 }
 

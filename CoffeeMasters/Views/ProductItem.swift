@@ -21,9 +21,11 @@ struct ProductItem: View {
                         .bold()
                     Text("$ \(product.price, specifier: "%.2f")")
                         .font(.caption)
-                    
-                }.padding(8)
+                }
+                .padding(8)
+                
                 Spacer()
+                
                 LikeButton(product: product)
             }
         }

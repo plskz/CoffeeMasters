@@ -39,7 +39,6 @@ struct DetailsPage: View {
             .background(Color("Alternative2"))
             .foregroundColor(Color.black)
             .cornerRadius(25)
-            
         }
         .navigationTitle(product.name)
         .toolbar {
