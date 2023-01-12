@@ -18,7 +18,6 @@ class MenuManager: ObservableObject {
         AF.request("https://firtman.github.io/coffeemasters/api/menu.json")
             .responseDecodable(of: [Category].self) { response in
                 if let menuFromNetwork = response.value {
-                    print(menuFromNetwork)
                     self.menu = menuFromNetwork
                 }
             }
