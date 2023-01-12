@@ -8,6 +8,7 @@ import SwiftUI
 
 struct MenuPage: View {
     @EnvironmentObject var menuManager: MenuManager
+    @State private var search: String = ""
     
     var body: some View {
         VStack {
@@ -23,7 +24,7 @@ struct MenuPage: View {
                         }
                     } else {
                         ForEach(menuManager.menu) { category in
-                            if category.products.count > 0 {
+                            if category.filteredItems(text: search).count > 0 {
                                 Text(category.name)
                                     .bold()
                                     .listRowBackground(Color("SurfaceBackground"))
@@ -31,7 +32,7 @@ struct MenuPage: View {
                                     .padding()
                             }
                             
-                            ForEach(category.products) { item in
+                            ForEach(category.filteredItems(text: search)) { item in
                                 ZStack {
                                     NavigationLink(destination: DetailsPage(product: item)) {
                                         EmptyView()
@@ -54,6 +55,7 @@ struct MenuPage: View {
                 .refreshable {
                     menuManager.refreshItemsFromNetwork()
                 }
+                .searchable(text: $search)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
