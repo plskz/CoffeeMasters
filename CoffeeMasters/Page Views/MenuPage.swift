@@ -52,10 +52,10 @@ struct MenuPage: View {
                 }
                 .listStyle(.insetGrouped)
                 .navigationTitle("Products")
+                .searchable(text: $search)
                 .refreshable {
                     menuManager.refreshItemsFromNetwork()
                 }
-                .searchable(text: $search)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
