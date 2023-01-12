@@ -12,12 +12,6 @@ struct Category: Decodable, Identifiable {
     var products: [Product] = []
     
     func filteredItems(text: String) -> [Product] {
-        if text.count > 0 {
-            return products.filter({ item in
-                item.name.contains(text)
-            })
-        } else {
-            return products
-        }
+        text.isEmpty ? products : products.filter{ $0.name.contains(text) }
     }
 }
