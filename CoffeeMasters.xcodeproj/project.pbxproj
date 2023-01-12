@@ -25,6 +25,8 @@
 		2CA21937295B0C0500E17138 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA21936295B0C0500E17138 /* Offer.swift */; };
 		2CBA56C2295B316A00B46A5E /* DetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA56C1295B316A00B46A5E /* DetailsPage.swift */; };
 		2CDD89C3296F0B4A00CE85E6 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD89C2296F0B4A00CE85E6 /* AppTitle.swift */; };
+		2CEB8CEB2970452700089C35 /* LikesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB8CEA2970452700089C35 /* LikesManager.swift */; };
+		2CEB8CED2970456C00089C35 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB8CEC2970456C00089C35 /* LikeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		2CA21936295B0C0500E17138 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		2CBA56C1295B316A00B46A5E /* DetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPage.swift; sourceTree = "<group>"; };
 		2CDD89C2296F0B4A00CE85E6 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
+		2CEB8CEA2970452700089C35 /* LikesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesManager.swift; sourceTree = "<group>"; };
+		2CEB8CEC2970456C00089C35 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 				2C003C15295C62BC00FC2D4D /* Product.swift */,
 				2C003C1B295C745300FC2D4D /* CartManager.swift */,
 				2C003C19295C742C00FC2D4D /* MenuManager.swift */,
+				2CEB8CEA2970452700089C35 /* LikesManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -79,6 +84,7 @@
 				2C46BA8C295B2F1A00761531 /* ProductItem.swift */,
 				2C003C1D295C7C3B00FC2D4D /* OrderItem.swift */,
 				2CDD89C2296F0B4A00CE85E6 /* AppTitle.swift */,
+				2CEB8CEC2970456C00089C35 /* LikeButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CEB8CEB2970452700089C35 /* LikesManager.swift in Sources */,
 				2CA21937295B0C0500E17138 /* Offer.swift in Sources */,
 				2C003C1C295C745300FC2D4D /* CartManager.swift in Sources */,
 				2C46BA83295B202700761531 /* OffersPage.swift in Sources */,
@@ -224,6 +231,7 @@
 				2C003C1A295C742C00FC2D4D /* MenuManager.swift in Sources */,
 				2C7751B72959C231006C4C00 /* CoffeeMastersApp.swift in Sources */,
 				2C46BA89295B2E3500761531 /* MenuPage.swift in Sources */,
+				2CEB8CED2970456C00089C35 /* LikeButton.swift in Sources */,
 				2C003C18295C62C600FC2D4D /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

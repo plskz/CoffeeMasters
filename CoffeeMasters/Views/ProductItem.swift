@@ -24,6 +24,7 @@ struct ProductItem: View {
                     
                 }.padding(8)
                 Spacer()
+                LikeButton(product: product)
             }
         }
         .background(Color("SurfaceBackground"))
@@ -34,7 +35,8 @@ struct ProductItem: View {
 
 struct ProductItem_Previews: PreviewProvider {
     static var previews: some View {
-        ProductItem(product: Product(id: 1, name: "Dummy Product", price: 5.0, image: "")
-        )
+        ProductItem(product: Product(id: 1, name: "Dummy Product", price: 5.0, image: "DummyImage"))
+            .environmentObject(LikesManager())
+            .padding()
     }
 }

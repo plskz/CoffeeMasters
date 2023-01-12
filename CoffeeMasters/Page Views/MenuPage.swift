@@ -64,5 +64,6 @@ struct MenuPage_Previews: PreviewProvider {
     static var previews: some View {
         MenuPage()
             .environmentObject(MenuManager())
+            .environmentObject(LikesManager())
     }
 }
